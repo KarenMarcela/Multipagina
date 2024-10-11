@@ -1,9 +1,7 @@
 ---
-interface Props {
-	title: string;
-}
 
-const { title } = Astro.props;
+
+const { title = 'TE OLVIDASTE DEL TITULO' , msg = 'Hola mundo' } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,34 +15,28 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<header class="h-20 bg-orange-400">
+		
+		</header>
+		<menu class="bg-blue-500  flex  justify-center">
+			<li>
+				<a class="hover:bg-white/25 px-3 block" href="/">Inicio</a>
+			</li>
+			<li>
+				<a class="hover:bg-white/25 px-3 block" href="/QuienesSomos">Quienes somos</a>
+			</li>
+			<li>
+				<a class="hover:bg-white/25 px-3 block" href="/organigrama">Organigrama</a>
+			</li>
+			<li>
+				<a class="hover:bg-white/25 px-3 block" href="/contacto">Contacto</a>
+			</li>
+		</menu>
+
+		<!-- Interpolacion {} -->
+		<p>Tu mensaje es : {msg}</p>
+		<slot /> 
+		<!-- El slot es para insertar codigo de manera dinamica en esa posiciòn, esto permite que yo tenga muchas paginas, el contenido del slot se ubicara en donde lo ubique dentro del body -->
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
+
