@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return [
+    {params: {news: 'clifford'}}, // Dentro de las comillas se coloca un url amigable
+    {params: {news: 'rover'}},
+    {params: {news: 'spot'}},
+  ];
+}
+
+
+const { news } = Astro.params;
+---
+<Layout>
+    El titulo de la noticia es: {news}
+
+</Layout>
+
+
