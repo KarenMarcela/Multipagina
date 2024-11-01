@@ -1,9 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Bienvenidos a mi pàgina .">
 	Este es el inicio
-
+	<p class="pretty-p font-myfont">Hola</p>
+	<Icon name="mdi:delete" size="50" class="text-rose-700"   />
+	<Icon name="svg-spinners:12-dots-scale-rotate" size="50" class="text-green-400" />
 </Layout>
 
+<style>
+	.pretty-p{
+		/* El apply se utiliza para aplicar propiedades de tailwind en vez de css puro */
+		@apply bg-red-500 p-6 text-white rounded h-60;
+		clip-path: polygon(100% 0%, 0% 0% , 0.00% 65.98%, 3.33% 65.01%, 6.67% 62.26%, 10.00% 58.16%, 13.33% 53.35%, 16.67% 48.58%, 20.00% 44.59%, 23.33% 42.01%, 26.67% 41.25%, 30.00% 42.41%, 33.33% 45.33%, 36.67% 49.54%, 40.00% 54.39%, 43.33% 59.11%, 46.67% 62.97%, 50.00% 65.37%, 53.33% 65.94%, 56.67% 64.57%, 60.00% 61.49%, 63.33% 57.18%, 66.67% 52.32%, 70.00% 47.65%, 73.33% 43.91%, 76.67% 41.69%, 80.00% 41.33%, 83.33% 42.89%, 86.67% 46.13%, 90.00% 50.53%, 93.33% 55.42%, 96.67% 60.02%, 100.00% 63.62%);
+	}
+</style>
